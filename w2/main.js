@@ -2,7 +2,7 @@
 const hhMembers = 3;
 
 // size of home
-const homesize = 2;
+const homeSize = 2;
 
 // food choices
 const foodChoi = 10;
@@ -11,7 +11,7 @@ const foodChoi = 10;
 const waterCons = 2;
 
 // household purchases
-const householdPur = 6;
+const houseHoldPur = 6;
 
 // waste management
 const wasteProd = 3;
@@ -25,7 +25,7 @@ const pubTransport = 0;
 const flightS = 2;
 
 // Tallied score
-const finalScore = hhMembers + homesize + foodChoi + waterCons + householdPur 
+const finalScore = hhMembers + homeSize + foodChoi + waterCons + houseHoldPur 
 + wasteProd + wRecycle + PerTransport + pubTransport + flightS;
 
 // JS to update redenered html
