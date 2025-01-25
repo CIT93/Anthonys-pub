@@ -22,11 +22,11 @@ const wRecycle = 24;
 // annual transportation
 const PerTransport = 6;
 const pubTransport = 0;
-const flightS = 2;
+const flights = 2;
 
 // Tallied score
 const finalScore = hhMembers + homeSize + foodChoi + waterCons + houseHoldPur 
-+ wasteProd + wRecycle + PerTransport + pubTransport + flightS;
++ wasteProd + wRecycle + PerTransport + pubTransport + flights;
 
 // JS to update redenered html
 const myHeading = document.querySelector("h2");
