@@ -25,17 +25,22 @@ determineHouseHoldpts(3)
 determineHouseHoldpts(4) */
 
 /* my code */
-
-const homeSize = ""
-let homeSizePts = 0
-
-if (homeSize === "small") {
-    homeSizePts === homeSizePts + 10
-} else if(homeSize === "medium") {
-    homeSizePts === homeSizePts + 7
-} else if(homeSize === "large") {
-    homeSizePts === homeSizePts + 4
-} else if(homeSize === "apartment") {
-    homeSizePts === homeSizePts + 2
+function multihomeSize(homeSize) {
+    if (homeSize === "Small") {
+        homeSizePts = homeSizePts + 10;
+    } else if(homeSize === "Medium") {
+        homeSizePts = homeSizePts + 7;
+    } else if(homeSize === "large") {
+        homeSizePts = homeSizePts + 4;
+    } else if(homeSize === "Apartment") {
+        homeSizePts = homeSizePts + 2;
+    }
+    console.log(`If your house is ${homeSize} sized, then your carbon footprint is: ${homeSizePts}`)
 }
-console.log(`If your house is ${homeSize} then your carbon footprint is: ${homeSizePts}`)
+
+const homeSize = "";
+let homeSizePts = 0;
+
+multihomeSize("Small")
+multihomeSize("Medium")
+multihomeSize("large")
