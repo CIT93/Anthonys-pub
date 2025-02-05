@@ -1,5 +1,5 @@
 const CFPData = [];
-console.log('top of file')
+
 function determineHousesizepts(size) {
     console.log("inside the block scope");
     let houseSizePts = 0;
@@ -19,7 +19,6 @@ function determineHousesizepts(size) {
 }
 
 function determineHouseHoldpts(numberInHousehold) {
-    console.log("inside block script");
     let houseHoldPts = 0;
     if (numberInHousehold === 1) {
         houseHoldPts = 14;
@@ -40,19 +39,22 @@ function determineHouseHoldpts(numberInHousehold) {
 }
 
 
-console.log('global scope')
 
 function start(houseHoldMembers, houseSize) {
-const houseHoldPts = determineHouseHoldpts(houseHoldMembers);
-const houseSizePts = determineHousesizepts(houseSize); 
-const total = houseSizePts + houseHoldPts
-CFPData.push(houseHoldMembers, houseSize, houseHoldPts, houseSizePts, total)
-
-console.log(`total carbon footprint points so far ${total}`)
+    const houseHoldPts = determineHouseHoldpts(houseHoldMembers);
+    const houseSizePts = determineHousesizepts(houseSize); 
+    const total = houseSizePts + houseHoldPts
+    CFPData.push([houseHoldMembers, houseSize, houseHoldPts, houseSizePts, total]);
 }
 
 function displayOutput() {
-
+    for (Array of CFPData) {
+        console.log(Array)
+        const output = document.getElementById("output");
+        const newP = document.createElement("p");
+        newP.textContent = `Total amount of people in your home: ${Array[0]}, Size of your home: ${Array[1]}, carbon footprint based on members in your home: ${Array[2]}, carbon footprint based on homesize: ${Array[3]}, total carbon footprint: ${Array[4]}`;
+        output.appendChild(newP)
+    }
 }
 
 start(5, "large");
