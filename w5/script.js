@@ -1,4 +1,4 @@
-const cfpData = [];
+/* const cfpData = [];
 
 function determineHouseSizePts(size) {
   let houseSizePoints = 0;
@@ -82,6 +82,8 @@ function displayOutput() {
     }
 }
 
+ 
+
 start(1, "apt");
 start(2, "apt");
 start(3, "apt");
@@ -114,3 +116,26 @@ start(7, "large");
 
 displayOutput()
 
+ */
+
+
+
+const movieArray = [
+  {title: "John Wick 4", Date: "2023", rating: "94%"}, 
+  {title: "spider man across the spider verse", Date: "2023", rating: "95%"}, 
+  {title: "Deadpool & Wolverine", Date: "2024", rating: "94%"}, 
+]
+
+function displayMovies() {
+  const output = document.getElementById("output");
+  for (obj of movieArray) {
+    
+    console.log(obj); 
+    const newh2 = document.createElement("h2");
+    newh2.textContent = `the movie ${obj.title}, with a rating of ${obj.rating}, was released in ${obj.Date}.`
+    output.appendChild(newh2);
+  }
+    
+}
+
+displayMovies()
