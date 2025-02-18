@@ -121,9 +121,9 @@ displayOutput()
 
 
 const movieArray = [
-  {title: "John Wick 4", Date: "2023", rating: "94%"}, 
-  {title: "spider man across the spider verse", Date: "2023", rating: "95%"}, 
-  {title: "Deadpool & Wolverine", Date: "2024", rating: "94%"}, 
+  {title: "John Wick 4", date: "2023", rating: "94%"}, 
+  {title: "spider man across the spider verse", date: "2023", rating: "95%"}, 
+  {title: "Deadpool & Wolverine", date: "2024", rating: "94%"}, 
 ]
 
 function displayMovies() {
@@ -132,7 +132,7 @@ function displayMovies() {
     
     console.log(obj); 
     const newh2 = document.createElement("h2");
-    newh2.textContent = `the movie ${obj.title}, with a rating of ${obj.rating}, was released in ${obj.Date}.`
+    newh2.textContent = `the movie ${obj.title}, with a rating of ${obj.rating}, was released in ${obj.dateate}.`
     output.appendChild(newh2);
   }
     
