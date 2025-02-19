@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week 6</title>
+    <script defer src="main.js"></script>
+    <style>
+        html {
+            font-size: 22px;
+        }
+
+        body {
+            background-color: black;
+            color: whitesmoke;
+        }
+    
+        input:in-range {
+            background-color: lightgreen;
+        }
+
+        input:out-of-range {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form">
+        <fieldset>
+           <legend>Calculating your carbon footprint points</legend>
+           <div>
+            <label for="">First Name:</label>
+            <input type="text" name="firstName" min=1 max="20" required >
+           </div>
+           <div>
+            <label for="">Last Name: </label>
+            <input type="text" name="lastName" min="1" max="20" required >
+           </div>
+           <div> 
+           <label for="">Household Members: </label>
+            <input type="number" name="hhmembers" min="1" max="20" required >
+           </div>
+           <div>
+           <label for="">Household Size: </label> 
+            <select name="houses">
+                <option value="">---Please enter size of home---</option>
+                <option value="apt">Apartment</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                
+            </select>
+            </div>
+           
+           <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+
+    <div id="output"></div>
+</body>
+
+</html>
