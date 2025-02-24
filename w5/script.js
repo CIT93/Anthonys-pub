@@ -126,26 +126,20 @@ const movieArray = [
   {title: "Deadpool & Wolverine", date: "2024", rating: "94%", watched: 3}, 
 ]
 
-function displayMovies() {
+function displayMovies(Movie) {
   const output = document.getElementById("output");
-    movieArray.forEach((element) => {
-    console.log(element)
-  
-    if (element.rating === "95%" && element.watched === 20) {
+    movieArray.forEach(function(Movie) {
+    
+    if (Movie.rating === "95%" && Movie.watched === 20) {
       const newh2 = document.createElement("h2");
-      newh2.textContent = `the movie ${element.title}, with a rating of ${element.rating}, was released in ${element.date} with the movie being watched ${element.watched} times `
+      newh2.textContent = `the movie ${Movie.title}, with a rating of ${Movie.rating}, was released in ${Movie.date} with the movie being watched ${Movie.watched} times `
       output.appendChild(newh2);
     } else {
       const newh2 = document.createElement("h2");
       newh2.textContent = `unauthroized`
       output.appendChild(newh2);
     }
-  })   
-}
-
-function determine() {
-  
-  
+  })
 }
 
 displayMovies()
