@@ -9,11 +9,13 @@ const cfpData = [];
 
 
 
-function start(houseHoldMembers, houseSize) {
+function start(first, last, houseHoldMembers, houseSize) {
   const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
   const houseSizePts = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePts;
   cfpData.push ({
+    firstname: first,
+    lastname: last,
     houseHm: houseHoldMembers,
     houseS: houseSize,
     houseHpts: houseHoldPTS,

@@ -9,18 +9,16 @@ function renderTBL(data) {
     const td = document.createElement("td")
     data.forEach(function(newtext) {
       const td = document.createElement("td");
-      td.textContent = newtext;
       
       const tdName = document.createElement("td");
       tdName.textContent = newtext.firstname;
       tr.appendChild(tdName)  
       
-      const tdtotal = document.createElement("td");
-      tdName.textContent = newtext.tot;
-      tr.appendChild(tdtotal) 
+      const tdTotal = document.createElement("td");
+      tdTotal.textContent = newtext.tot;
+      tr.appendChild(tdTotal) 
     
       console.log(td);
-      tr.appendChild(td);
       tbody.appendChild(tr);  
     })
   /*  const btnEdit = document.createElement("Button")
@@ -41,10 +39,11 @@ function renderTBL(data) {
   // I kept the orginal code withing the renderTBl function, as I really
   // as I worried something may break.
   function renderTBlHeading() {
+    TBL.innerHTML = "";
     const table = document.createElement("table");
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
-    const headingText = ["Name", "Total" ]
+    const headingText = ["Name", "Total"]
     headingText.forEach(function(text) {
       const th = document.createElement("th");
       th.textContent = text;
