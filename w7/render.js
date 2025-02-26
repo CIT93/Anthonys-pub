@@ -35,8 +35,7 @@ const TBL = document.getElementById("tab-data")
       tdTotal.textContent = newtext.tot;
       tr.appendChild(tdName)  
       tr.appendChild(tdTotal) 
-      table.appendChild(tbody)
-      console.log(td);
+      tbody.appendChild(tr);  
     })
   /*  const btnEdit = document.createElement("Button")
   const btnDel = document.createElement("Button") */
@@ -44,8 +43,7 @@ const TBL = document.getElementById("tab-data")
   btnDel.textContent = "Del"
   td.appendChild(btnEdit)
   td.appendChild(btnDel)  */
-  tr.appendChild(td)
-  tbody.appendChild(tr)
+  table.appendChild(tbody)
   console.log(table)
   } 
   
