@@ -1,3 +1,5 @@
+import {  } from "./main.js"
+
 const TBL = document.getElementById("tab-data")
 
 function renderTBL(data) {
@@ -5,22 +7,28 @@ function renderTBL(data) {
     const tbody = document.createElement("tbody")
     const tr = document.createElement("tr")
     const td = document.createElement("td")
-    const arr = ["John", "1", "apt", "24",]
-    arr.forEach(function(Newtext) {
+    data.forEach(function(newtext) {
       const td = document.createElement("td");
-      td.textContent = Newtext;
-      tr.appendChild(td);
+      td.textContent = newtext;
       
+      const tdName = document.createElement("td");
+      tdName.textContent = newtext.firstname;
+      tr.appendChild(tdName)  
+      
+      const tdtotal = document.createElement("td");
+      tdName.textContent = newtext.tot;
+      tr.appendChild(tdtotal) 
+    
       console.log(td);
+      tr.appendChild(td);
+      tbody.appendChild(tr);  
     })
-  const btnEdit = document.createElement("Button")
-  const btnDel = document.createElement("Button")
-  
-  btnEdit.textContent = "Edit"
+  /*  const btnEdit = document.createElement("Button")
+  const btnDel = document.createElement("Button") */
+/*   btnEdit.textContent = "Edit"
   btnDel.textContent = "Del"
-  
   td.appendChild(btnEdit)
-  td.appendChild(btnDel)
+  td.appendChild(btnDel)  */
   
   tr.appendChild(td)
   tbody.appendChild(tr)
@@ -36,7 +44,7 @@ function renderTBL(data) {
     const table = document.createElement("table");
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
-    const headingText = ["Name", "HouseHold", "HouseSize", "Footprint", "Total" ]
+    const headingText = ["Name", "Total" ]
     headingText.forEach(function(text) {
       const th = document.createElement("th");
       th.textContent = text;
