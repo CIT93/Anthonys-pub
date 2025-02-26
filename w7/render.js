@@ -37,7 +37,6 @@ const TBL = document.getElementById("tab-data")
       tr.appendChild(tdTotal) 
       table.appendChild(tbody)
       console.log(td);
-      tbody.appendChild(tr);  
     })
   /*  const btnEdit = document.createElement("Button")
   const btnDel = document.createElement("Button") */
