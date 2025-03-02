@@ -129,7 +129,7 @@ const movieArray = ([
 function displayOutput() {
   const output = document.getElementById("output");
   const newh2 = document.createElement("h2");
-  newh2.textContent = "heres a list of recommended Movies for you!"
+  newh2.textContent = "What I should watch tonight!"
   output.appendChild(newh2);
 }
 
