@@ -120,13 +120,13 @@ displayOutput()
 
 
 
-const movieArray = [
-  {title: "John Wick 4", date: "2023", rating: "94%", watched: 3}, 
-  {title: "spider man across the spider verse", date: "2023", rating: "95%", watched: 20}, 
-  {title: "Deadpool & Wolverine", date: "2024", rating: "94%", watched: 3}, 
-]
+const movieArray = ([
+  {title: "John Wick 4", date: 2023, rating: 9.4, watched: 3}, 
+  {title: "spider man across the spider verse", date: 2023, rating: 9.5, watched: 20}, 
+  {title: "Deadpool & Wolverine", date: 2024, rating: 9.4, watched: 3}, 
+])
 
-function displayMovies(Movie) {
+function displayOutput() {
   const output = document.getElementById("output");
   const newh2 = document.createElement("h2");
   newh2.textContent = "heres a list of recommended Movies for you!"
@@ -135,33 +135,25 @@ function displayMovies(Movie) {
 
 
 
-function moviesTable() {
-  const movieTbl = document.getElementById("movTbl")
-  const table = document.createElement("table")
-  const tbody = document.createElement("tbody")
-  const td =  document.createElement("td")
-
-  movieArray.forEach(function(movies) {
-    const tr = document.createElement("tr")
-    const tdTitle = document.createElement("td")
-    tdTitle.textContent = movies.title
-    const tdDate = document.createElement("td")
-    tdDate.textContent = movies.date
-    const tdRating = document.createElement("td")
-    tdRating.textContent = movies.rating
-    const tdWatched = document.createElement("td")
-    tdWatched.textContent = movies.watched
-    tr.appendChild(tdTitle)
-    tr.appendChild(tdDate)
-    tr.appendChild(tdRating)
-    tr.appendChild(tdWatched)
-    tbody.appendChild(tr)
-  })
-table.appendChild(tbody)
-movieTbl.appendChild(table)
-console.log(table)
+function displayMovies(movieArray) {
+const movieEl = document.getElementById("movies");
+const table = document.createElement("table");
+const row = document.createElement("tr");
+movieArray.forEach(function(movie) {
+  if (movie.rating === 9.5 && movie.watched === 20) {
+    for (const key in movie) {
+      console.log(movie[key]);
+      const cell = document.createElement("td");
+      cell.textContent = movie[key];
+      row.appendChild(cell);
+    }
+  table.appendChild(row)
+  movieEl.appendChild(table)
+  }
+});
 }
 
-displayMovies()
-moviesTable()
+displayOutput()
+displayMovies(movieArray)
+
 
