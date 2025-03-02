@@ -142,4 +142,32 @@ function displayMovies(Movie) {
   })
 }
 
+
+
+function moviesTable(displayMovies) {
+  const table = document.createElement("table")
+  const tbody = document.createElement("tbody")
+  const td =  document.createElement("td")
+  movieArray.forEach(function(movies) {
+    const tr = document.createElement("tr")
+    const tdTitle = document.createElement("td")
+    tdTitle.textContent = movies.title
+    const tdDate = document.createElement("td")
+    tdDate.textContent = movies.date
+    const tdRating = document.createElement("td")
+    tdRating.textContent = movies.rating
+    const tdWatched = document.createElement("td")
+    tdWatched.textContent = movies.watched
+    tr.appendChild(tdTitle)
+    tr.appendChild(tdDate)
+    tr.appendChild(tdRating)
+    tr.appendChild(tdWatched)
+    tbody.appendChild(tr)
+  })
+table.appendChild(tbody)
+console.log(table)
+}
+
 displayMovies()
+moviesTable()
+

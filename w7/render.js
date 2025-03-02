@@ -37,7 +37,8 @@ const TBL = document.getElementById("tab-data")
       tr.appendChild(tdTotal) 
       tbody.appendChild(tr);  
     })
-  /*  const btnEdit = document.createElement("Button")
+  
+    /*  const btnEdit = document.createElement("Button")
   const btnDel = document.createElement("Button") */
 /*   btnEdit.textContent = "Edit"
   btnDel.textContent = "Del"
