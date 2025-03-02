@@ -128,26 +128,19 @@ const movieArray = [
 
 function displayMovies(Movie) {
   const output = document.getElementById("output");
-    movieArray.forEach(function(Movie) {
-    
-    if (Movie.rating === "95%" && Movie.watched === 20) {
-      const newh2 = document.createElement("h2");
-      newh2.textContent = `the movie ${Movie.title}, with a rating of ${Movie.rating}, was released in ${Movie.date} with the movie being watched ${Movie.watched} times `
-      output.appendChild(newh2);
-    } else {
-      const newh2 = document.createElement("h2");
-      newh2.textContent = `unauthroized`
-      output.appendChild(newh2);
-    }
-  })
+  const newh2 = document.createElement("h2");
+  newh2.textContent = "heres a list of recommended Movies for you!"
+  output.appendChild(newh2);
 }
 
 
 
-function moviesTable(displayMovies) {
+function moviesTable() {
+  const movieTbl = document.getElementById("movTbl")
   const table = document.createElement("table")
   const tbody = document.createElement("tbody")
   const td =  document.createElement("td")
+
   movieArray.forEach(function(movies) {
     const tr = document.createElement("tr")
     const tdTitle = document.createElement("td")
@@ -165,6 +158,7 @@ function moviesTable(displayMovies) {
     tbody.appendChild(tr)
   })
 table.appendChild(tbody)
+movieTbl.appendChild(table)
 console.log(table)
 }
 
