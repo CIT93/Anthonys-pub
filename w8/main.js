@@ -27,10 +27,10 @@ FORM.addEventListener('submit', function(e){
   console.log(e); */
   const firstname = FORM.FirstName.value;
   const lastname = FORM.LastName.value;
-  const houseHoldMembers = parseInt(FORM.hhmembers.value);
-  const houseSize = FORM.houses.value;
+  const houseHm = parseInt(FORM.houseHm.value);
+  const houseS = FORM.houseS.value;
   
-  start(firstname, lastname, houseHoldMembers, houseSize)
+  start(firstname, lastname, houseHm, houseS)
   renderTBL(cfpData)
   OUTPUT.innerHTML = "";
   FORM.reset();

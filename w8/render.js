@@ -20,8 +20,8 @@ function renderTBLButtons(obj, index, data) {
   btnEdit.addEventListener('click', function (e) {
     FORM[1].value = obj.firstname;
     FORM[2].value = obj.lastname;
-    FORM[3].value = obj.hhmembers;
-    FORM[4].value = obj.houses;
+    FORM[3].value = obj.houseHm;
+    FORM[4].value = obj.houseS;
     data.splice(index, 1)
     renderTBL(data)
   })
