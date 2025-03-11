@@ -39,11 +39,11 @@ function FormV(firstname, lastname, e) {
   const errorEle = document.getElementById('error')
   let messages = []
   if (firstname === '' || firstname === null) {
-    messages.push("name is requried")
+    messages.push("firstname is requried")
   }
   
   if (lastname === '' || lastname === null) {
-    messages.push("name is requried")
+    messages.push("lastname is requried")
   }
   
   if (messages.length > 0) {
