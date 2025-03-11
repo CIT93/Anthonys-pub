@@ -4,30 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>week 6</title>
+    <title>week 9</title>
     <script type="module" src="main.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
+<div id="error"></div>
 <body>
-    <form id="form">
+    <form id="form" action="/" method="GET">
         <fieldset>
             <legend>Calculating your carbon footprint points</legend>
             <div>
                 <label for="">First Name:</label>
-                <input type="text" name="FirstName" required>
+                <input type="text" name="FirstName">
             </div>
             <div>
                 <label for="">Last Name: </label>
-                <input type="text" name="LastName" required>
+                <input type="text" name="LastName">
             </div>
             <div>
                 <label for="">Household Members: </label>
-                <input type="number" name="houseHm" required min="1" max="6">
+                <input type="number" name="hhmembers" required min="1" max="6">
             </div>
             <div>
                 <label for="">Household Size: </label>
-                <select name="houseS">
+                <select name="houses">
                     <option value="">---Please enter size of home---</option>
                     <option value="apt">Apartment</option>
                     <option value="small">Small</option>
