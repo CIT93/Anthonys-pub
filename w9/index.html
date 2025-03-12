@@ -4,23 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>week 9</title>
     <script type="module" src="main.js"></script>
+    <title>week 9</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <div id="error"></div>
 <body>
-    <form id="form" action="/" method="GET">
+    <form id="simpleForm">
         <fieldset>
             <legend>Calculating your carbon footprint points</legend>
             <div>
-                <label for="">First Name:</label>
-                <input type="text" name="FirstName">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstname">
+                <span id="firstNameError" class="error" role="alert"></span>
             </div>
             <div>
-                <label for="">Last Name: </label>
-                <input type="text" name="LastName">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastname">
+                <span id="lastNameError" class="error" role="alert"></span>
             </div>
             <div>
                 <label for="">Household Members: </label>
@@ -39,81 +41,10 @@
             </div>
 
             <button type="submit">Submit</button>
+            <span id="submitError" class="error"></span>
         </fieldset>
     </form>
 
     <div id="output"></div>
     <div id="tab-data"></div>
-   <!--  <table>
-      <thead>
-        <tr>
-            <th>Name</th>
-            <th>HouseHold</th>
-            <th>House Size</th>
-            <th>Carbon Footprint</th>
-            <th>Actions</th>
-        </tr>
-      </thead>   
-      <tbody>
-        <tr>
-            <td>Anthony</td>
-            <td>3</td>
-            <td>Large</td>
-            <td>22</td>
-            <td>
-                <button>edit</button>
-                <button>del</button>
-            </td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-            <td>Anthony</td>
-            <td>3</td>
-            <td>Large</td>
-            <td>22</td>
-            <td>
-                <button>edit</button>
-                <button>del</button>
-            </td>
-        </tr>
-      </tbody>
-    </table> -->
-<!-- <table>
-      <thead>
-        <tr>
-            <th>Name</th>
-            <th>HouseHold</th>
-            <th>House Size</th>
-            <th>Carbon Footprint</th>
-            <th>Actions</th>
-        </tr>
-      </thead>   
-      <tbody>
-        <tr>
-            <td>John</td>
-            <td>1</td>
-            <td>apt</td>
-            <td>24</td>
-            <td>
-                <button>edit</button>
-                <button>del</button>
-            </td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-            <td>Arthur</td>
-            <td>5</td>
-            <td>small</td>
-            <td>18</td>
-            <td>
-                <button>edit</button>
-                <button>del</button>
-            </td>
-        </tr>
-      </tbody>
-</table>  -->
-</body>
-
-</html>
+   

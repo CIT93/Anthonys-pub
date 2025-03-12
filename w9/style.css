@@ -23,3 +23,7 @@ table, th, td {
 tbody tr:nth-child(odd) {
     background-color: brown;
 }
+
+.error {
+    color: red;
+}

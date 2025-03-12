@@ -3,6 +3,13 @@ import { renderTBL } from "./render.js";
 import { FORM } from "./global.js";
 import { saveLS, cfpData} from "./storage.js";
 
+
+  const firstNameEL = document.getElementById('firstName');
+  const lastNameEL = document.getElementById('lastName');
+  const submitEL = document.getElementById('submitError');
+
+
+
 function start(first, last, houseHoldMembers, houseSize) {
   const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
   const houseSizePts = determineHouseSizePts(houseSize);
@@ -18,37 +25,41 @@ function start(first, last, houseHoldMembers, houseSize) {
   });
 }   
 
+firstNameEL.addEventListener('blur', validateField);
+lastNameEL.addEventListener('blur', validateField);
+
 
 renderTBL(cfpData)
 FORM.addEventListener('submit', function(e){
   e.preventDefault();
-  const firstname = FORM.FirstName.value;
-  const lastname = FORM.LastName.value;
+  const firstname = FORM.firstName.value;
+  const lastname = FORM.lastName.value;
+  const FirstNameIsValid = firstNameEL.value != '';
+  const LastNameIsValid = lastNameEL.value != '';
+  
+  if (FirstNameIsValid && LastNameIsValid ) {
+  submitEL.textContent = '';
   const houseHoldMembers = parseInt(FORM.hhmembers.value);
   const houseSize = FORM.houses.value;
-  const isvalid = FormV(firstname, lastname, e) 
-  if (isvalid) {
   start(firstname, lastname, houseHoldMembers, houseSize)
   saveLS(cfpData)
   renderTBL(cfpData)
   FORM.reset();
+  } else {
+    submitEL.textContent = "Form requires first and last name";
   }
 })
 
-function FormV(firstname, lastname, e) {
-  const errorEle = document.getElementById('error')
-  let messages = []
-  if (firstname === '' || firstname === null) {
-    messages.push("firstname is requried")
+function validateField(event) {
+  const field = event.target.value;
+  const fieldId = event.target.id;
+  const fieldError = document.getElementById(`${fieldId}Error`);
+
+  if (field === '') {
+      fieldError.textContent = `${fieldId} is required`;
+      event.target.classList.add('invalid');
+  } else {
+      fieldError.textContent = '';
+      event.target.classList.remove('invalid');
   }
-  
-  if (lastname === '' || lastname === null) {
-    messages.push("lastname is requried")
-  }
-  
-  if (messages.length > 0) {
-    e.preventDefault()
-    errorEle.innerText = messages.join(',  ')
-   
-  }
-}
+};
