@@ -5,15 +5,29 @@ import { saveLS, cfpData } from "./storage.js";
 
 
 
-const start = (first, last, houseHoldMembers, houseSize) => {
-  const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
-  const houseSizePts = determineHouseSizePts(houseSize);
+/* const start = (first, last, houseHoldMembers, houseSize) => {
+  const houseHoldPTS = determineHouseHoldPts();
+  const houseSizePts = determineHouseSizePts();
   const total = houseHoldPTS + houseSizePts;
   cfpData.push({
     firstname: first,
     lastname: last,
     houseHm: houseHoldMembers,
     houseS: houseSize,
+    houseHpts: houseHoldPTS,
+    houseSpts: houseSizePts,
+    tot: total,
+  });
+} */
+const start = (...i) => {
+  const houseHoldPTS = determineHouseHoldPts(i[2]);
+  const houseSizePts = determineHouseSizePts(i[3]);
+  const total = houseHoldPTS + houseSizePts;
+  cfpData.push({
+    firstname: i[0],
+    lastname: i[1],
+    houseHm: i[2],
+    houseS: i[3],
     houseHpts: houseHoldPTS,
     houseSpts: houseSizePts,
     tot: total,

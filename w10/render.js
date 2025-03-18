@@ -63,7 +63,7 @@ const renderTBL = (data) => {
   }
 }
 
-const renderTBlHeading = () => {
+/* const renderTBlHeading = () => {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
@@ -81,9 +81,9 @@ const renderTBlHeading = () => {
   console.log(table);
   TBL.appendChild(table);
   return table
-}
+} */
 
-/* const renderTBlHeading = () => {
+ const renderTBlHeading = () => {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
@@ -99,7 +99,7 @@ const renderTBlHeading = () => {
   console.log(table);
   TBL.appendChild(table);
   return table
-} */
-
+} 
+ 
 export { renderTBL, renderTBlHeading }
 
