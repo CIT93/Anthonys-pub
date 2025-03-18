@@ -1,6 +1,8 @@
 import { FORM, TBL, } from "./global.js"
 import { saveLS } from "./storage.js"
 
+
+
 const onUpdate = (index, data) => {
   data.splice(index, 1)
   renderTBL(data)
@@ -65,6 +67,26 @@ const renderTBlHeading = () => {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
+  const headingText = (...header) => {
+  header.forEach( (text) => {
+    const th = document.createElement("th");
+    th.textContent = text;
+    tr.appendChild(th);
+    console.log(th);
+  })
+  }
+  headingText("Name", "household", "housesize", "total", "actions")
+  thead.appendChild(tr);
+  table.appendChild(thead);
+  console.log(table);
+  TBL.appendChild(table);
+  return table
+}
+
+/* const renderTBlHeading = () => {
+  const table = document.createElement("table");
+  const thead = document.createElement("thead");
+  const tr = document.createElement("tr");
   const headingText = ["Name", "household", "housesize", "total", "actions"]
   headingText.forEach( (text,) => {
     const th = document.createElement("th");
@@ -77,6 +99,7 @@ const renderTBlHeading = () => {
   console.log(table);
   TBL.appendChild(table);
   return table
-}
+} */
 
 export { renderTBL, renderTBlHeading }
+
