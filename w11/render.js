@@ -26,9 +26,9 @@ const renderTBLButtons = (obj, index, data) => {
   btnEdit.addEventListener('click',  (e) => {
     FORM[1].value = obj.first;
     FORM[2].value = obj.last;
-    FORM[3].value = obj.houseHoldPoints;
-    FORM[4].value = obj.houseSizePoints;
-    FORM[5].value = obj.foodChoicePoints;
+    FORM[3].value = obj.houseMembers;
+    FORM[4].value = obj.houseSize;
+    FORM[5].value = obj.foodChoice;
     onUpdate(index, data);
   })
   return td;
