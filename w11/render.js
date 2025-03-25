@@ -28,6 +28,7 @@ const renderTBLButtons = (obj, index, data) => {
     FORM[2].value = obj.last;
     FORM[3].value = obj.houseHoldPoints;
     FORM[4].value = obj.houseSizePoints;
+    FORM[5].value = obj.foodChoicePoints;
     onUpdate(index, data);
   })
   return td;
