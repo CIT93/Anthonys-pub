@@ -4,25 +4,28 @@ const FORM = document.getElementById("Form")
 
 
 
-function BeginWorkout() {
+function beginWorkout() {
 
     FORM.addEventListener( 'submit', function(e) {
     e.preventDefault()
     const exercises = FORM.exercises.value
-    const Reps = FORM.Reps.value
-    const Time = FORM.Time.value
+    const reps = FORM.reps.value
+    const time = FORM.time.value
     
+    Output.innerHTML = '';
   
-    const Start = document.createElement("p")
-    Start.textContent = `your exercise is: ${exercises} and your reps are: ${Reps}, for ${Time} minute`;
-    Output.appendChild(Start)
+    const start = document.createElement("p")
+    start.textContent = `your exercise is: ${exercises} and your reps are: ${reps}, for ${time} minute/s`;
+    Output.appendChild(start)
         
     setTimeout(() => {
-        const Stop = document.createElement("p")
-        Stop.textContent = `STOP!`;
-        Output.appendChild(Stop)
-    }, parseInt(Time) * 60 * 1000)
+        const stop = document.createElement("p")
+        stop.textContent = `STOP!`;
+        Output.appendChild(stop)
+        FORM.reset()
+    }, parseInt(time) * 60 * 1000)
 })
+   
 }
 
-BeginWorkout()
+beginWorkout()
