@@ -4,21 +4,25 @@ const FORM = document.getElementById("Form")
 
 function timeStop(time) {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const stop = document.createElement("p")
-            stop.textContent = `STOP!`;
-            Output.appendChild(stop)
-            FORM.reset()
-            reject()
-        }, parseInt(time) * 60 * 1000)
+        if (isNaN(time) || time <= 0) {
+            reject('invalid input')
+        } else {
+            setTimeout(() => {
+                const stop = document.createElement("p")
+                stop.textContent = `STOP!`;
+                Output.appendChild(stop)
+                FORM.reset()
+                resolve()
+            }, parseInt(time) * 60 * 1000)
+        }
     })
 
-}  
+}
 
 
 function onError() {
     const error = document.createElement("p")
-    error.textContent = `⚠️ Error!`;
+    error.textContent = `⚠️ Error: Invalid time input!`;
     Output.appendChild(error)
     FORM.reset()
 }
