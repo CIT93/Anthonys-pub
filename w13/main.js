@@ -41,4 +41,6 @@ FORM.addEventListener('submit', function (e) {
 
     timeStop(time)
         .catch(onError)
+
+    FORM.reset() 
 })
