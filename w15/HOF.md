@@ -1,0 +1,3 @@
+# My understanding
+- My understanding of forEach has improved, the fact we were already doing higher order functions
+is suprising but makes sense considering on how you broke it down. we are essentially writing a function within a function. I looked over some of our older code that utilized forEach to get a bit of a better understanding as well. For example how we utilized it in the render.js file for the array we created in the heading function.

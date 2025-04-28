@@ -1,21 +1,14 @@
 /* https://picsum.photos/seed/${img.id}/150 */
-
-function renderPhotos(photos) {
-    photos.forEach((img) => { 
-        const imgEl = document.createElement("img")
-        imgEl.setAttribute("src", `https://picsum.photos/seed/${img.id}/150`)
-        document.getElementById("Output").appendChild(imgEl);
-   })
-}   
+const URL = "https://jsonplaceholder.typicode.com/posts"
 
 async function getPhotos() {
     try {
-        const response = await fetch(`https://jsonplaceholder.typicode.com/posts`)
+        const response = await fetch(URL)
         const photos = await response.json()
-       if (!photos.length) {
-        console.log('error on return value')
-       } else {
+       if (photos.length) {
         onSuccess(photos)
+       } else {
+        console.log('error on return value')
        }
     } catch(error) {
         onError(error)
@@ -23,13 +16,18 @@ async function getPhotos() {
    
 }
 
-
-function onSuccess(photos) {
-    renderPhotos(photos)
+const displayPhotos = posts => {
+    posts.forEach(post => {
+        console.log(post)
+    });
 }
 
 function onError(err) {
     console.log(`Error, ${err}`)
+}
+
+function onSuccess(posts) {
+    displayPhotos(posts)
 }
 
 function start() {
