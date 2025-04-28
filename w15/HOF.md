@@ -18,3 +18,9 @@ is suprising but makes sense considering on how you broke it down. we are essent
 - utilizing map is similar to how we utilize forEach and filter.
 
 - can reference other arrays.
+
+# reduce
+
+- iterates elements of an array into a single value.
+
+- when reducing, you wanna have a sum and length.

@@ -27,6 +27,14 @@ const displayPhotos = posts => {
     })
     console.log(mappedPostArr)
 
+    // reduce
+    /* const total = mappedPostArr.reduce((sum, len) => sum + len, 0) */
+    
+    // average, ended up gatting isNAN, ran it threw devtools and i still couldn't find the error as to whats
+    // causing it.
+    const total = mappedPostArr.reduce((sum, len) => sum + len, 0) 
+    const average = total / mappedPostArr
+    console.log(average)
 }
 
 
