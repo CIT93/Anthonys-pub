@@ -10,3 +10,11 @@ is suprising but makes sense considering on how you broke it down. we are essent
 - make sure the syntaax is exact when writing out the key.
 
 - to keep it short, you don't need to use return or brackets when writing out the conditonal statements.
+
+# map
+
+- iterates over every array and provides some type of function.
+
+- utilizing map is similar to how we utilize forEach and filter.
+
+- can reference other arrays.

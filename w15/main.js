@@ -17,8 +17,16 @@ async function getPhotos() {
 }
 
 const displayPhotos = posts => {
-    const filterPostArr = posts.filter(post =>  post.userId === 1 && post.title.length > 10)
+    // filter
+    const filterPostArr = posts.filter(post =>  post.userId === 1 && post.title.length > 17)
     console.log(filterPostArr)
+
+    // map
+    const mappedPostArr = filterPostArr.map(post => {
+        return post.body.length
+    })
+    console.log(mappedPostArr)
+
 }
 
 
