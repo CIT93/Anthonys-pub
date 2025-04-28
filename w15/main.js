@@ -17,10 +17,11 @@ async function getPhotos() {
 }
 
 const displayPhotos = posts => {
-    posts.forEach(post => {
-        console.log(post)
-    });
+    const filterPostArr = posts.filter(post =>  post.userId === 1 && post.title.length > 10)
+    console.log(filterPostArr)
 }
+
+
 
 function onError(err) {
     console.log(`Error, ${err}`)
