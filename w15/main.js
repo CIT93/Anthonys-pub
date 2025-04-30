@@ -1,54 +1,62 @@
-/* https://picsum.photos/seed/${img.id}/150 */
-const URL = "https://jsonplaceholder.typicode.com/posts"
-
-async function getPhotos() {
-    try {
-        const response = await fetch(URL)
-        const photos = await response.json()
-       if (photos.length) {
-        onSuccess(photos)
-       } else {
-        console.log('error on return value')
-       }
-    } catch(error) {
-        onError(error)
-    }
-   
-}
-
-const displayPhotos = posts => {
-    // filter
-    const filterPostArr = posts.filter(post =>  post.userId === 1 && post.title.length > 17)
-    console.log(filterPostArr)
-
-    // map
-    const mappedPostArr = filterPostArr.map(post => {
-        return post.body.length
-    })
-    console.log(mappedPostArr)
-
-    // reduce
-    /* const total = mappedPostArr.reduce((sum, len) => sum + len, 0) */
-    
-    // average, ended up gatting isNAN, ran it threw devtools and i still couldn't find the error as to whats
-    // causing it.
-    const total = mappedPostArr.reduce((sum, len) => sum + len, 0) 
-    const average = total / mappedPostArr.length
-    console.log(average)
-}
 
 
 
-function onError(err) {
-    console.log(`Error, ${err}`)
-}
 
-function onSuccess(posts) {
-    displayPhotos(posts)
-}
+import { determineHouseHoldPts, determineHouseSizePts } from "./cfp.js";
+import { renderTBL } from "./render.js";
+import { FORM, FNAME, LNAME, SUBMIT } from "./global.js";
+import { saveLS, cfpData } from "./storage.js";
+import { FP } from "./fp.js";
 
-function start() {
-    getPhotos()
-}
 
-getPhotos();
+/* const start = function(first, last, houseHoldMembers, houseSize) {
+  const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
+  const houseSizePts = determineHouseSizePts(houseSize);
+  const total = houseHoldPTS + houseSizePts;
+  cfpData.push({
+    firstname: first,
+    lastname: last,
+    houseHm: houseHoldMembers,
+    houseS: houseSize,
+    houseHpts: houseHoldPTS,
+    houseSpts: houseSizePts,
+    tot: total,
+  });
+} */
+
+const validateField = function(event) {
+  const field = event.target.value;
+  const fieldId = event.target.id;
+  const fieldError = document.getElementById(`${fieldId}Error`);
+
+  if (field === '') {
+    fieldError.textContent = `${fieldId} is required`;
+    event.target.classList.add('invalid');
+  } else {
+    fieldError.textContent = '';
+    event.target.classList.remove('invalid');
+  }
+};
+
+FNAME.addEventListener('blur', validateField);
+LNAME.addEventListener('blur', validateField);
+
+
+renderTBL(cfpData)
+FORM.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  if (FNAME.value !== '' && LNAME.value !== '') {
+    SUBMIT.textContent = ''
+    const fpObj = new FP(FNAME.value, LNAME.value, parseInt(FORM.hhmembers.value), FORM.houses.value, FORM.Food.value)
+    cfpData.push(fpObj)
+    saveLS(cfpData)
+    renderTBL(cfpData)
+    FORM.reset();
+  } else {
+    SUBMIT.textContent = "Form requires first and last name";
+  }
+})
+
+ 
+
