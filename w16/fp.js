@@ -4,8 +4,7 @@
 
 
 class FP {
-    constructor(first, last, houseMembers, houseSize, foodChoice, sources, single, double
-    ) {
+    constructor(first, last, houseMembers, houseSize, foodChoice, sources, single, double, householdPur    ) {
         this.first = first
         this.last = last
         this.houseMembers = houseMembers
@@ -14,11 +13,13 @@ class FP {
         this.sources = sources
         this.single = single
         this.double = double
+        this.householdPur = householdPur
         this.calhouseHoldPoints();
         this.calhouseSizePoints();
         this.calfoodChoicePoints();
         this.calfoodSourcesPoints()
-        this.waterConsuPoints()
+        this.calwaterConsuPoints()
+        this.calhousePurPoints()
         this.caltotal()
     }
     calhouseSizePoints() {
@@ -72,7 +73,7 @@ class FP {
         }
     }
         
-    waterConsuPoints() {
+    calwaterConsuPoints() {
             const calculatePoints = (val) => {
                 if (val === 9) return 3;
                 if (val > 4 && val < 9) return 2;
@@ -89,8 +90,22 @@ class FP {
         }
         
     
+    calhousePurPoints() {
+        if (this.householdPur === 'seven') {
+            this.housePurPoints = 10
+        } else if (this.householdPur === 'five') {
+            this.housePurPoints = 8
+        } else if (this.householdPur === 'three') {
+            this.housePurPoints = 6
+        } else if (this.householdPur === 'less') {
+            this.housePurPoints = 4;
+        } else if (this.householdPur === 'none') {
+            this.housePurPoints = 2; 
+        }
+    }
+
     caltotal() {
-        this.total = this.houseHoldPoints + this.houseSizePoints + this.foodChoicePoints + this.foodSourcesPoints + this.waterConsuPoints
+        this.total = this.houseHoldPoints + this.houseSizePoints + this.foodChoicePoints + this.foodSourcesPoints + this.waterConsuPoints + this.housePurPoints
          
     }
 }

@@ -45,7 +45,8 @@ FORM.addEventListener('submit', function (e) {
         e.target.Food.value,
         e.target.sources.value,
         parseInt(e.target.single.value),
-        parseInt(e.target.double.value))
+        parseInt(e.target.double.value),
+        e.target.householdP.value)
         cfpData.push(fpObj)
         saveLS(cfpData)
     renderTBL(cfpData)
