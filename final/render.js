@@ -28,14 +28,14 @@ function buttonsDrow( obj, index, results ) {
 
 
         // Completely does not work, issue still hasn't been found.
-     /* edit.addEventListener('click', function () {
+     edit.addEventListener('click', function () {
        FORM[1].value = obj.range;
        FORM[2].value = obj.specs;
        onUpdate(index, results)
     
         console.log("Range value after setting:", FORM[1].value);
         console.log("Specs value after setting:", FORM[2].value);
-    }); */
+    });
     
       
 
