@@ -1,0 +1,59 @@
+
+html {
+    padding: 0;
+    margin: 0;
+    font-size: 22px;
+    text-align: center;
+}
+
+header {
+    background-color: grey;
+    width: auto;
+    padding: 20px;
+    border-bottom: 5px dashed black
+}
+
+
+
+body {
+    background-color: lightgray;
+    color: white;
+    
+}
+
+.FORM {
+    text-align: center;
+    border: 3px solid black; 
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 40px;
+    background-color: grey
+}
+
+input:in-range {
+    background-color: lightgreen;
+}
+
+input:out-of-range {
+    background-color: red;
+}
+
+table, th, td {
+    border: 1px solid;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    background-color: darkslategrey;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: lightslategray;
+}
+
+
+#errorBudget, #errorSpecs {
+    color: goldenrod;
+}
